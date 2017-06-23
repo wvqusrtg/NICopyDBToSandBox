@@ -8,6 +8,7 @@ NICopyDBToSandBox (0.0.2)
    - Source:   https://github.com/wvqusrtg/NICopyDBToSandBox.git
    - Versions: 0.0.2 [master repo]
 
+---
 >/**
 
 > 拷贝DB模板用，不单单可以拷贝 AS.sqlite库文件，还有其他资源文件也可以通用这个方法  DATA_BASE_FILE_NAME
@@ -21,7 +22,7 @@ NICopyDBToSandBox (0.0.2)
 
 >+(BOOL)copyDBToDocumentsWithDBName:(NSString *)DBName;
 
->
+---
 
 >/**
 
@@ -35,7 +36,7 @@ NICopyDBToSandBox (0.0.2)
 
 >+(NSString *)getDocumentsPath;
 
->
+---
 
 >/**
 
@@ -49,7 +50,7 @@ NICopyDBToSandBox (0.0.2)
 
 >+(NSArray*)getAllFileNamesArrayFromDocuments;
 
->
+---
 
 >/**
 
@@ -65,7 +66,7 @@ NICopyDBToSandBox (0.0.2)
 
 >+(NSString *)getFileFullPathFromDocuments:(NSString *)filename;
 
->
+---
 
 >/**
 
@@ -81,7 +82,7 @@ NICopyDBToSandBox (0.0.2)
 
 >+(NSString *)getFileFullPathFromProduct:(NSString*)filename;
 
->
+---
 
 >/**
 
@@ -100,7 +101,7 @@ NICopyDBToSandBox (0.0.2)
 
 >+(BOOL)saveNSMutableArrayForDocuments:(NSMutableArray *)dic WithFileName:(NSString*)fileName;
 
->
+---
 
 >/**
 
@@ -119,7 +120,7 @@ NICopyDBToSandBox (0.0.2)
 
 >+(BOOL)saveNSMutableArrayForProduct:(NSMutableArray *)dic WithFileName:(NSString*)fileName;
 
->
+---
 
 >/**
 
@@ -141,7 +142,7 @@ NICopyDBToSandBox (0.0.2)
 
 >+(NSArray *)loadNSArrayFromProductWithFileName:(NSString*)fileName;
 
->
+---
 
 >//判断沙盒Documents文件夹内/产品（Ant.ipa包里面）文件夹内 文件是否存在
 

@@ -13,6 +13,7 @@ NICopyDBToSandBox (0.0.1)
 ---
 
 ##自己封装开源库上传到cocoapods
+
 >step1:github上开仓库
 ![](./Res/1、github上开仓库.png)
 
@@ -47,3 +48,5 @@ NICopyDBToSandBox (0.0.1)
 >step8:![](./Res/7.png)
 
 >step9:![](./Res/8.png)
+
+>step10:![](./Res/9.png)

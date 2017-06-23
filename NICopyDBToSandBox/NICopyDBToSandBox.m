@@ -9,11 +9,8 @@
 #import "NICopyDBToSandBox.h"
 
 @implementation NICopyDBToSandBox
-/**
- *  拷贝DB模板用
- *  不单单可以拷贝 AS.sqlite库文件，还有其他资源文件也可以通用这个方法  DATA_BASE_FILE_NAME
- */
-+(BOOL)copyDBToSandBoxWithDBName:(NSString *)DBName{
+
++(BOOL)copyDBToDocumentsWithDBName:(NSString *)DBName{
     //取得程序运行时沙盒路径
     NSString * documentsPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) firstObject];
     NSLog(@"程序沙盒Documents路径：%@",documentsPath);
@@ -45,22 +42,107 @@
  获取Documents路径下所有文件
  @return 获取到的Documents路径下所有文件NSArray列表
  */
-+(NSArray*)getAllFileNamesArray
++(NSArray*)getAllFileNamesArrayFromDocuments
 {
+    {
+    //NSString *homeDir = NSHomeDirectory();
     // 获得此程序的沙盒路径
-    NSArray *patchs = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    //NSArray *patchs = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     // 获取Documents路径
     // [patchs objectAtIndex:0]
-    NSString *documentsDirectory = [patchs objectAtIndex:0];
-    NSLog(@"获取Documents路径：%@",documentsDirectory);
-    //NSString *fileDirectory = [documentsDirectory stringByAppendingPathComponent:@"%@", dirName];
+    //NSString *documentsDirectory = [patchs objectAtIndex:0];
+    //NSLog(@"获取Documents路径：%@",documentsDirectory);
+    //NSString *fileDirectory = [documentsDirectory stringByAppendingPathComponent:@"%@", dirName];//Documents里有文件夹的操作
     
     //NSArray *files = [[NSFileManager defaultManager] subpathsOfDirectoryAtPath:fileDirectory error:nil];
     //return files;
-    
+    }
     NSString* string = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
     NSFileManager* fileManager = [NSFileManager defaultManager];
     NSArray* fileList = [[NSArray alloc] initWithArray:[fileManager contentsOfDirectoryAtPath:string error:nil]];
     return fileList;
+//    2017-06-23 15:37:47.304 NICopyDBToSandBoxDemo[33640:1006798] 程序沙盒Documents路径：/Users/nixinsheng/Library/Developer/CoreSimulator/Devices/4F6CB66C-C67A-4A4E-98C8-CE03F3729FA4/data/Containers/Data/Application/A03A63EF-1101-467F-9C8D-5ED8CE9E9C40/Documents
+//    2017-06-23 15:37:47.307 NICopyDBToSandBoxDemo[33640:1006798] Success.
+//    2017-06-23 15:37:47.307 NICopyDBToSandBoxDemo[33640:1006798] (
+//                                                                  ".DS_Store",
+//                                                                  "AS.sqlite"
+//                                                                  )
+}
+
++(NSString *)getDocumentsPath{
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    return [paths objectAtIndex:0];
+    //eg：/Users/nixinsheng/Library/Developer/CoreSimulator/Devices/4F6CB66C-C67A-4A4E-98C8-CE03F3729FA4/data/Containers/Data/Application/E147C161-7DDB-4210-A6CB-EA912C293382/Documents
+}
+
++(NSString *)getFileFullPathFromProduct:(NSString*)filename{
+    NSString *path = [[NSBundle mainBundle] pathForResource:filename ofType:@""];
+    return  path;
+    //eg:/Users/nixinsheng/Library/Developer/CoreSimulator/Devices/4F6CB66C-C67A-4A4E-98C8-CE03F3729FA4/data/Containers/Bundle/Application/62519FDA-CB12-40D3-ADDF-742498A17B31/NICopyDBToSandBoxDemo.app/AS.sqlite
+}
+
++(NSString *)getFileFullPathFromDocuments:(NSString *)filename{
+    NSString *documentsPath = [self getDocumentsPath];
+    return [documentsPath stringByAppendingPathComponent:filename];
+    //eg:/Users/nixinsheng/Library/Developer/CoreSimulator/Devices/4F6CB66C-C67A-4A4E-98C8-CE03F3729FA4/data/Containers/Data/Application/0A00E8A6-4E4A-44E6-B78E-DB7147A1CAA5/Documents/AS.sqlite
+}
+
++(BOOL)saveNSDictionaryForDocuments:(NSDictionary *)dic WithFileName:(NSString*)fileName{
+    NSString *f = [self getFileFullPathFromDocuments:fileName];
+    return [dic writeToFile:f atomically:YES];
+    //eg:eg:/Users/nixinsheng/Library/Developer/CoreSimulator/Devices/4F6CB66C-C67A-4A4E-98C8-CE03F3729FA4/data/Containers/Data/Application/0A00E8A6-4E4A-44E6-B78E-DB7147A1CAA5/Documents/UserInfo.plist
+}
+
++(BOOL)saveNSMutableArrayForDocuments:(NSMutableArray *)dic WithFileName:(NSString*)fileName{
+    NSString *f = [self getFileFullPathFromDocuments:fileName];
+    return [dic writeToFile:f atomically:YES];
+}
+
++(BOOL)saveNSDictionaryForProduct:(NSDictionary *)dic WithFileName:(NSString*)fileName{
+    NSString *ProductPath =[[NSBundle mainBundle]  resourcePath];
+    NSString *f=[ProductPath stringByAppendingPathComponent:fileName];
+    return [dic writeToFile:f atomically:YES];
+    //eg:/Users/nixinsheng/Library/Developer/CoreSimulator/Devices/4F6CB66C-C67A-4A4E-98C8-CE03F3729FA4/data/Containers/Bundle/Application/8506292D-F60C-4393-9FAC-1ECAFD2CFBB3/NICopyDBToSandBoxDemo.app/User.plist
+}
++(BOOL)saveNSMutableArrayForProduct:(NSMutableArray *)dic WithFileName:(NSString*)fileName{
+    NSString *ProductPath =[[NSBundle mainBundle]  resourcePath];
+    NSString *f=[ProductPath stringByAppendingPathComponent:fileName];
+    return [dic writeToFile:f atomically:YES];
+}
+
++(NSDictionary *)loadNSDictionaryFromDocumentsWithFileName:(NSString*)fileName{
+    NSString *f = [self getFileFullPathFromDocuments:fileName];
+    NSDictionary *list = [ [NSDictionary alloc] initWithContentsOfFile:f];
+    //return [list autorelease];
+    return list;
+}
++(NSDictionary *)loadNSDictionaryFromProductWithFileName:(NSString*)fileName{
+    NSString *f = [self getFileFullPathFromProduct:fileName];
+    NSDictionary *list = [ [NSDictionary alloc] initWithContentsOfFile:f];
+    //return [list autorelease];
+    return list;
+}
+
++(NSArray*)loadNSArrayFromDocumentsWithFileName:(NSString*)fileName{
+    NSString *f = [self getFileFullPathFromDocuments:fileName];
+    NSArray* array = [NSArray arrayWithContentsOfFile:f];
+    return array;
+}
++(NSArray *)loadNSArrayFromProductWithFileName:(NSString*)fileName{
+    NSString *f = [self getFileFullPathFromProduct:fileName];
+    NSArray *array = [NSArray arrayWithContentsOfFile:f];
+    return array;
+}
+
++(BOOL) fileIsExistsFromDocumentsWithFileName:(NSString*)fileName{
+    NSString *filePath = [self getFileFullPathFromDocuments:fileName];
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    return [fileManager fileExistsAtPath:filePath];
+}
+
++(BOOL) fileIsExistsFromProductWithFileName:(NSString*)fileName{
+    NSString *filePath = [self getFileFullPathFromProduct:fileName];
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    return [fileManager fileExistsAtPath:filePath];
 }
 @end

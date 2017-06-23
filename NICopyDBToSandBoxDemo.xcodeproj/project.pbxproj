@@ -15,6 +15,7 @@
 		8C1483E11EFCB874008AE1F2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C1483DF1EFCB874008AE1F2 /* LaunchScreen.storyboard */; };
 		8C1483EB1EFCB927008AE1F2 /* NICopyDBToSandBox.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C1483EA1EFCB927008AE1F2 /* NICopyDBToSandBox.m */; };
 		8C1483ED1EFCB9D9008AE1F2 /* AS.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 8C1483EC1EFCB9D9008AE1F2 /* AS.sqlite */; };
+		8C1484121EFCFD92008AE1F2 /* language.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C1484111EFCFD92008AE1F2 /* language.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		8C1483E91EFCB927008AE1F2 /* NICopyDBToSandBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NICopyDBToSandBox.h; sourceTree = "<group>"; };
 		8C1483EA1EFCB927008AE1F2 /* NICopyDBToSandBox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NICopyDBToSandBox.m; sourceTree = "<group>"; };
 		8C1483EC1EFCB9D9008AE1F2 /* AS.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = AS.sqlite; sourceTree = "<group>"; };
+		8C1484111EFCFD92008AE1F2 /* language.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = language.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +83,7 @@
 			isa = PBXGroup;
 			children = (
 				8C1483EC1EFCB9D9008AE1F2 /* AS.sqlite */,
+				8C1484111EFCFD92008AE1F2 /* language.png */,
 				8C1483D21EFCB874008AE1F2 /* main.m */,
 			);
 			name = "Supporting Files";
@@ -155,6 +158,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8C1483E11EFCB874008AE1F2 /* LaunchScreen.storyboard in Resources */,
+				8C1484121EFCFD92008AE1F2 /* language.png in Resources */,
 				8C1483ED1EFCB9D9008AE1F2 /* AS.sqlite in Resources */,
 				8C1483DE1EFCB874008AE1F2 /* Assets.xcassets in Resources */,
 				8C1483DC1EFCB874008AE1F2 /* Main.storyboard in Resources */,

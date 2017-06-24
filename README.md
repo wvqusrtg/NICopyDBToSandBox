@@ -8,6 +8,10 @@ NICopyDBToSandBox (0.0.2)
    - Source:   https://github.com/wvqusrtg/NICopyDBToSandBox.git
    - Versions: 0.0.2 [master repo]
 
+>![](./Res/10、0.0.2.png)
+
+>![](./Res/11、0.0.2.png)
+
 ---
 >/**
 

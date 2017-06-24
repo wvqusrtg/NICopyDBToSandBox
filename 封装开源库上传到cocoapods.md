@@ -207,19 +207,41 @@ NICopyDBToSandBox (0.0.2)
 >UIImage *appleImage = [[UIImage alloc] initWithContentsOfFile:imagePath];
 ---
 
->![](./Res/7.png)
+##自己封装开源库上传到cocoapods
 
->![](./Res/8.png)
+>step1:github上开仓库
+![](./Res/1、github上开仓库.png)
 
->![](./Res/9.png)
+>step2:本地开工程执行操作如下：
+>>1st:git init
+>>2st:git remote add origin https://github.com/wvqusrtg/NICopyDBToSandBox.git
+![](./Res/2、gitremoteaddorigin.png)
+>>3st:git pull origin master
 
+>step3:[使开源库支持pod](http://tech.yunyingxbs.com/article/detail/id/272.html)
+>![](./Res/3、使开源库支持pod.png)
 
----
+>step4:[NICopyDBToSandBox.podspec](NICopyDBToSandBox.podspec)
+>![](./Res/4、podspec.png)
 
->[封装自己开源库上传到cocoapods:](./封装开源库上传到cocoapods.md)
+>![](./Res/4.1、podspec.png)
 
->####有问题或建议请联系：
+>step5:这里呢，我们设置的版本号为0.0.1，那么tag号为0.0.1，因此我们还需要新建一个tag,名为0.0.1，然后推到git：
 
->QQ:1911398892
+>$ git commit -m "如果当前有变化，先提交到git上，再创建tag"
 
->微信号：wvqusrtg
+>$ git tag 0.0.1
+
+>$ git push --tags
+
+>$ git push origin master
+
+>step6:![](./Res/5.png)
+
+>step7:![](./Res/6.png)
+
+>step8:![](./Res/7.png)
+
+>step9:![](./Res/8.png)
+
+>step10:![](./Res/9.png)

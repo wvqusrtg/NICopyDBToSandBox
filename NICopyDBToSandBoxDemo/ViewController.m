@@ -18,28 +18,29 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    if ([NICopyDBToSandBox copyDBToDocumentsWithDBName:@"AS.sqlite"]) {
-        NSLog(@"Success.");
-        NSLog(@"%@",[NICopyDBToSandBox getAllFileNamesArrayFromDocuments]);
-    }else{
-        NSLog(@"Fail.");
-    }
+//    if ([NICopyDBToSandBox copyDBToDocumentsWithDBName:@"AS.sqlite"]) {
+//        NSLog(@"Success.");
+//        NSLog(@"%@",[NICopyDBToSandBox getAllFileNamesArrayFromDocuments]);
+//    }else{
+//        NSLog(@"Fail.");
+//    }
+//    
+//    
+//    if ([NICopyDBToSandBox fileIsExistsFromDocumentsWithFileName:@"UserInfo.plist"]) {
+//        NSLog(@"YES");
+//    }else{
+//        NSLog(@"NO");
+//    }
+//    
+//    if ([NICopyDBToSandBox fileIsExistsFromProductWithFileName:@"Info.plist"]) {
+//        NSLog(@"YES");
+//    }else{
+//        NSLog(@"NO");
+//    }
     
+    NSLog(@"%@",[self getNowTime_NI]);
     
-    if ([NICopyDBToSandBox fileIsExistsFromDocumentsWithFileName:@"UserInfo.plist"]) {
-        NSLog(@"YES");
-    }else{
-        NSLog(@"NO");
-    }
-    
-    if ([NICopyDBToSandBox fileIsExistsFromProductWithFileName:@"Info.plist"]) {
-        NSLog(@"YES");
-    }else{
-        NSLog(@"NO");
-    }
-    
-    
-    
+    NSLog(@"%@",[self getNowTime_NI_oneHour]);
 //    NSLog(@"%@",[NICopyDBToSandBox getDocumentsPath]);
     
 //    NSLog(@"%@",[NICopyDBToSandBox getFilePathFromDocuments:@"AS.sqlite"]);
@@ -60,8 +61,36 @@
 
     
 }
-
-
+-(NSString *)getNowTime_NI{
+    NSDate *date = [NSDate date];
+    
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    
+    
+    [formatter setDateStyle:NSDateFormatterMediumStyle];
+    
+    [formatter setTimeStyle:NSDateFormatterShortStyle];
+    
+    [formatter setDateFormat:@"YYYY-MM-dd HH:mm:ss"];
+    NSString *DateTime = [formatter stringFromDate:date];
+    //NSLog(@"%@============年-月-日  时：分：秒=====================",DateTime);
+    return DateTime;
+}
+-(NSString *)getNowTime_NI_oneHour{
+    NSDate *date = [[NSDate alloc] initWithTimeIntervalSinceNow:3600];
+    
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    
+    
+    [formatter setDateStyle:NSDateFormatterMediumStyle];
+    
+    [formatter setTimeStyle:NSDateFormatterShortStyle];
+    
+    [formatter setDateFormat:@"YYYY-MM-dd HH:mm:ss"];
+    NSString *DateTime = [formatter stringFromDate:date];
+    //NSLog(@"%@============年-月-日  时：分：秒=====================",DateTime);
+    return DateTime;
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

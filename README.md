@@ -1,4 +1,11 @@
 ## NICopyDBToSandBox
+---
+
+![License MIT](https://img.shields.io/github/license/mashape/apistatus.svg?maxAge=2592000)
+![Pod version](https://img.shields.io/cocoapods/v/NICopyDBToSandBox.svg?style=flat)
+[![Carthage Compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
+[![Platform info](https://img.shields.io/cocoapods/p/NICopyDBToSandBox.svg?style=flat)](http://cocoadocs.org/docsets/NICopyDBToSandBox)
+[![Build Status](https://api.travis-ci.org/NICopyDBToSandBox/NICopyDBToSandBox.svg?branch=master)](https://travis-ci.org/NICopyDBToSandBox/NICopyDBToSandBox)
 
 ---
 `NICopyDBToSandBox (0.0.2)

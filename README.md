@@ -6,6 +6,11 @@
 [![Platform info](https://img.shields.io/cocoapods/p/NICopyDBToSandBox.svg?style=flat)](http://cocoadocs.org/docsets/NICopyDBToSandBox)
 [![Build Status](https://api.travis-ci.org/NICopyDBToSandBox/NICopyDBToSandBox.svg?branch=master)](https://travis-ci.org/NICopyDBToSandBox/NICopyDBToSandBox)
 
+
+---
+2020年08月03日12:13:09
+更新版本：Version 0.0.3
+
 ---
 `NICopyDBToSandBox (0.0.2)
    NICopyDBToSandBox:拷贝DB文件到沙盒里及其他牵涉沙盒Documents文件夹内/产品（Ant.ipa包里面）文件夹内fileName操作`

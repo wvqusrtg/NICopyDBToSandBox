@@ -13,9 +13,9 @@
 		8C1483DC1EFCB874008AE1F2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C1483DA1EFCB874008AE1F2 /* Main.storyboard */; };
 		8C1483DE1EFCB874008AE1F2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8C1483DD1EFCB874008AE1F2 /* Assets.xcassets */; };
 		8C1483E11EFCB874008AE1F2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C1483DF1EFCB874008AE1F2 /* LaunchScreen.storyboard */; };
-		8C1483EB1EFCB927008AE1F2 /* NICopyDBToSandBox.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C1483EA1EFCB927008AE1F2 /* NICopyDBToSandBox.m */; };
 		8C1483ED1EFCB9D9008AE1F2 /* AS.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 8C1483EC1EFCB9D9008AE1F2 /* AS.sqlite */; };
 		8C1484121EFCFD92008AE1F2 /* language.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C1484111EFCFD92008AE1F2 /* language.png */; };
+		8CBDC41D24D7B8FE005F9BBD /* NICopyDBToSandBox.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CBDC41C24D7B8FE005F9BBD /* NICopyDBToSandBox.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,10 +29,10 @@
 		8C1483DD1EFCB874008AE1F2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8C1483E01EFCB874008AE1F2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8C1483E21EFCB874008AE1F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8C1483E91EFCB927008AE1F2 /* NICopyDBToSandBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NICopyDBToSandBox.h; sourceTree = "<group>"; };
-		8C1483EA1EFCB927008AE1F2 /* NICopyDBToSandBox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NICopyDBToSandBox.m; sourceTree = "<group>"; };
 		8C1483EC1EFCB9D9008AE1F2 /* AS.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = AS.sqlite; sourceTree = "<group>"; };
 		8C1484111EFCFD92008AE1F2 /* language.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = language.png; sourceTree = "<group>"; };
+		8CBDC41B24D7B8FE005F9BBD /* NICopyDBToSandBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NICopyDBToSandBox.h; sourceTree = "<group>"; };
+		8CBDC41C24D7B8FE005F9BBD /* NICopyDBToSandBox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NICopyDBToSandBox.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,7 +49,6 @@
 		8C1483C51EFCB874008AE1F2 = {
 			isa = PBXGroup;
 			children = (
-				8C1483E81EFCB90C008AE1F2 /* NICopyDBToSandBox */,
 				8C1483D01EFCB874008AE1F2 /* NICopyDBToSandBoxDemo */,
 				8C1483CF1EFCB874008AE1F2 /* Products */,
 			);
@@ -66,6 +65,7 @@
 		8C1483D01EFCB874008AE1F2 /* NICopyDBToSandBoxDemo */ = {
 			isa = PBXGroup;
 			children = (
+				8CBDC41A24D7B8FE005F9BBD /* NICopyDBToSandBox */,
 				8C1483D41EFCB874008AE1F2 /* AppDelegate.h */,
 				8C1483D51EFCB874008AE1F2 /* AppDelegate.m */,
 				8C1483D71EFCB874008AE1F2 /* ViewController.h */,
@@ -89,14 +89,14 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		8C1483E81EFCB90C008AE1F2 /* NICopyDBToSandBox */ = {
+		8CBDC41A24D7B8FE005F9BBD /* NICopyDBToSandBox */ = {
 			isa = PBXGroup;
 			children = (
-				8C1483E91EFCB927008AE1F2 /* NICopyDBToSandBox.h */,
-				8C1483EA1EFCB927008AE1F2 /* NICopyDBToSandBox.m */,
+				8CBDC41B24D7B8FE005F9BBD /* NICopyDBToSandBox.h */,
+				8CBDC41C24D7B8FE005F9BBD /* NICopyDBToSandBox.m */,
 			);
 			path = NICopyDBToSandBox;
-			sourceTree = "<group>";
+			sourceTree = SOURCE_ROOT;
 		};
 /* End PBXGroup section */
 
@@ -139,6 +139,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -172,7 +173,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8C1483EB1EFCB927008AE1F2 /* NICopyDBToSandBox.m in Sources */,
+				8CBDC41D24D7B8FE005F9BBD /* NICopyDBToSandBox.m in Sources */,
 				8C1483D91EFCB874008AE1F2 /* ViewController.m in Sources */,
 				8C1483D61EFCB874008AE1F2 /* AppDelegate.m in Sources */,
 				8C1483D31EFCB874008AE1F2 /* main.m in Sources */,

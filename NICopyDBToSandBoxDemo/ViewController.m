@@ -17,50 +17,52 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    /**
+     if ([NICopyDBToSandBox copyDBToDocumentsWithDBName:@"AS.sqlite"]) {
+         NSLog(@"Success.");
+         NSLog(@"%@",[NICopyDBToSandBox getAllFileNamesArrayFromDocuments]);
+     }else{
+         NSLog(@"Fail.");
+     }
+     
+     if ([NICopyDBToSandBox fileIsExistsFromDocumentsWithFileName:@"UserInfo.plist"]) {
+         NSLog(@"YES");
+     }else{
+         NSLog(@"NO");
+     }
+     
+     if ([NICopyDBToSandBox fileIsExistsFromProductWithFileName:@"Info.plist"]) {
+         NSLog(@"YES");
+     }else{
+         NSLog(@"NO");
+     }
+     */
     
-//    if ([NICopyDBToSandBox copyDBToDocumentsWithDBName:@"AS.sqlite"]) {
-//        NSLog(@"Success.");
-//        NSLog(@"%@",[NICopyDBToSandBox getAllFileNamesArrayFromDocuments]);
-//    }else{
-//        NSLog(@"Fail.");
-//    }
-//    
-//    
-//    if ([NICopyDBToSandBox fileIsExistsFromDocumentsWithFileName:@"UserInfo.plist"]) {
-//        NSLog(@"YES");
-//    }else{
-//        NSLog(@"NO");
-//    }
-//    
-//    if ([NICopyDBToSandBox fileIsExistsFromProductWithFileName:@"Info.plist"]) {
-//        NSLog(@"YES");
-//    }else{
-//        NSLog(@"NO");
-//    }
+    /**
+     NSLog(@"%@",[NICopyDBToSandBox getDocumentsPath]);
+     
+     NSLog(@"%@",[NICopyDBToSandBox getFilePathFromDocuments:@"AS.sqlite"]);
+     
+     NSLog(@"%@",[NICopyDBToSandBox getFilePath:@"AS.sqlite"]);
+     
+     if ([NICopyDBToSandBox saveNSDictionaryForDocuments:@{@"name":@"nixinsheng",@"sex":@"male",@"age":@"27"} WithFileName:@"UserInfo.plist"]) {
+         NSLog(@"Success.");
+     }else{
+         NSLog(@"Fail.");
+     }
+
+     if ([NICopyDBToSandBox saveNSDictionaryForProduct:@{@"name":@"nixinsheng",@"sex":@"male",@"age":@"27"} WithFileName:@"User.plist"]) {
+         NSLog(@"Success.");
+     }else{
+         NSLog(@"Fail.");
+     }
+     */
     
+    //简单测试
     NSLog(@"%@",[self getNowTime_NI]);
-    
     NSLog(@"%@",[self getNowTime_NI_oneHour]);
-//    NSLog(@"%@",[NICopyDBToSandBox getDocumentsPath]);
-    
-//    NSLog(@"%@",[NICopyDBToSandBox getFilePathFromDocuments:@"AS.sqlite"]);
-    
-//    NSLog(@"%@",[NICopyDBToSandBox getFilePath:@"AS.sqlite"]);
-    
-//    if ([NICopyDBToSandBox saveNSDictionaryForDocuments:@{@"name":@"nixinsheng",@"sex":@"male",@"age":@"27"} WithFileName:@"UserInfo.plist"]) {
-//        NSLog(@"Success.");
-//    }else{
-//        NSLog(@"Fail.");
-//    }
-
-//    if ([NICopyDBToSandBox saveNSDictionaryForProduct:@{@"name":@"nixinsheng",@"sex":@"male",@"age":@"27"} WithFileName:@"User.plist"]) {
-//        NSLog(@"Success.");
-//    }else{
-//        NSLog(@"Fail.");
-//    }
-
-    
 }
+
 -(NSString *)getNowTime_NI{
     NSDate *date = [NSDate date];
     
@@ -76,6 +78,7 @@
     //NSLog(@"%@============年-月-日  时：分：秒=====================",DateTime);
     return DateTime;
 }
+
 -(NSString *)getNowTime_NI_oneHour{
     NSDate *date = [[NSDate alloc] initWithTimeIntervalSinceNow:3600];
     
@@ -91,6 +94,7 @@
     //NSLog(@"%@============年-月-日  时：分：秒=====================",DateTime);
     return DateTime;
 }
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

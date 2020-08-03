@@ -57,10 +57,12 @@
     //NSArray *files = [[NSFileManager defaultManager] subpathsOfDirectoryAtPath:fileDirectory error:nil];
     //return files;
     }
+    
     NSString* string = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
     NSFileManager* fileManager = [NSFileManager defaultManager];
     NSArray* fileList = [[NSArray alloc] initWithArray:[fileManager contentsOfDirectoryAtPath:string error:nil]];
     return fileList;
+    
 //    2017-06-23 15:37:47.304 NICopyDBToSandBoxDemo[33640:1006798] 程序沙盒Documents路径：/Users/nixinsheng/Library/Developer/CoreSimulator/Devices/4F6CB66C-C67A-4A4E-98C8-CE03F3729FA4/data/Containers/Data/Application/A03A63EF-1101-467F-9C8D-5ED8CE9E9C40/Documents
 //    2017-06-23 15:37:47.307 NICopyDBToSandBoxDemo[33640:1006798] Success.
 //    2017-06-23 15:37:47.307 NICopyDBToSandBoxDemo[33640:1006798] (
